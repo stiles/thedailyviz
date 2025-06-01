@@ -72,4 +72,4 @@ The blog's D3 charts are hosted externally at `mattstiles.org/dailygraphics` and
 
 ## Original blog data
 
-The original WordPress XML export file us preserved in the `data/` directory for reference. 
+The original WordPress XML export file is preserved in the `data/` directory for reference. 
