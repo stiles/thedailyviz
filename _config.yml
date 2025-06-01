@@ -41,4 +41,9 @@ plugins:
 # Author
 author:
   name: Matt Stiles
-  email: mattstiles@gmail.com 
+  email: mattstiles@gmail.com
+
+# Google Analytics
+google_analytics:
+  tracking_id: "G-EFP5W9BBBD"
+  stream_id: "5250781266" 

@@ -20,6 +20,18 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
     <link rel="icon" type="image/png" href="{{ "/media/images/favicon.png" | relative_url }}">
     <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    {% if site.google_analytics.tracking_id %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.tracking_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ site.google_analytics.tracking_id }}');
+    </script>
+    {% endif %}
 </head>
 
 <body>
