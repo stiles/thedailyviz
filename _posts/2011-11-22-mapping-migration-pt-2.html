@@ -1,0 +1,44 @@
+---
+layout: post
+title: Mapping Migration, Pt. 2
+date: 2011-11-22 14:01:00.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags:
+- javascript
+- Mapping
+- migration
+- mysql
+- raphael js
+meta:
+  tumblr_mattstiles_permalink: http://thedailyviz.com/post/13167490821/mapping-migration-pt-2
+  tumblr_mattstiles_id: '13167490821'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1629534681;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:296;}i:1;a:1:{s:2:"id";i:42;}i:2;a:1:{s:2:"id";i:189;}}}}
+author:
+  login: mattstiles
+  email: mattstiles@gmail.com
+  display_name: Matt Stiles
+  first_name: Matt
+  last_name: Stiles
+permalink: "/2011/11/22/mapping-migration-pt-2/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<html><body></p>
+<p>Earlier this year I <a href="http://thedailyviz.com/post/2817165274/d-c-bound" target="_blank">posted about</a> this interesting interactive map that visualized residents’ migration based on tax-return data. Selecting counties highlights inflow and outflow migration of residents. This one shows D.C., where I moved last spring: </p>
+<p><a href="http://thedailyviz.com/post/2817165274/d-c-bound" target="_blank"><img src="http://thedailyviz.com/legacy/images/dc-migration.PNG" width="500"></a></p>
+<p>The map creator, Jon Bruner, a journalist at Forbes, recently released a much-improved version of the map. It’s better for a number of reasons. It incorporates a longer time period. The colors also are more elegant. And he’s added the ability to search and turn migration lines off while still coloring relevant counties.</p>
+<p>The biggest change, though, is that the map is now built with open-source tools, not Flash. Bruner <a href="http://jebruner.com/2011/11/how-to-build-an-interactive-map-with-open-source-tools/" target="_blank">explains in a post</a>: </p>
+<blockquote>
+<p>I built the map using nothing but open-source software, from Python and MySQL to handle the data right down to JavaScript to display the map. I’ve been steadily moving much of my data handling to Python and MySQL, but this is the first map I’ve made using JavaScript, and interactive JS maps are still rare elsewhere, too.</p>
+</blockquote>
+<p>Bruner goes on to explain how he used Raphael JS library to get around some incompatibility issues in Internet Explorer 7 and 8.</p>
+<p>Here’s a view of D.C. with lines (red represents majority outward migration; green represents majority inward migration; gray represents no migration to or from D.C.): </p>
+<p><img src="http://media.tumblr.com/tumblr_lv2v6hdP451qzqxu9.png"></p>
+<p>Here’s the view without lines: </p>
+<p><img src="http://media.tumblr.com/tumblr_lv2vah0YXc1qzqxu9.png"></p>
+<p>Nice work, Jon. </p>
+<p></body></html></p>

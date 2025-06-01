@@ -1,0 +1,45 @@
+@import "base";
+
+.tick
+{
+    font-size: 11px;
+    font-weight: normal;
+	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+}
+
+text {
+        fill: #999;
+        text-anchor: end;
+        -webkit-font-smoothing: antialiased;
+		
+		&.annotations { 
+			font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+			font-size: 12px;
+			text-anchor: start;
+		}
+}
+
+.value text {
+    font-size: 12px;
+    font-weight: bold;
+    fill: #999;
+	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+	&.net-migration { fill: @red3; display: none;}
+}
+
+.zero-line  {
+    stroke: #999;
+    stroke-width: 3px;
+    shape-rendering: crispEdges;
+}
+
+@media screen and (max-width: 500px) {
+    .key { display: none; }
+	
+	text {
+			&.annotations { 
+				display:inline;
+				font-size: 10px;
+			}
+	}
+}

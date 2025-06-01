@@ -1,0 +1,36 @@
+---
+layout: post
+title: Mapping GeoJSON On Github
+date: 2013-06-24 20:07:29.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Social Media
+tags:
+- github
+- mapbox
+- Mapping
+- Original
+meta:
+  _edit_last: '1'
+  _wpas_done_all: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1628810762;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:100;}i:1;a:1:{s:2:"id";i:958;}i:2;a:1:{s:2:"id";i:1397;}}}}
+author:
+  login: mattstiles
+  email: mattstiles@gmail.com
+  display_name: Matt Stiles
+  first_name: Matt
+  last_name: Stiles
+permalink: "/2013/06/24/mapping-geojson-on-github/"
+---
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<html><body>
+<p>I've been hoping to tinker with Github's new mapping service since the company <a href="https://github.com/blog/1528-there-s-a-map-for-that" target="_blank">announced</a> it earlier this month. Turns out it's quite easy. You just commit a <a href="http://www.geojson.org/">GeoJSON</a> file to your repo, and <em>voilà</em>.</p>
+<p>The points on this <a href="https://github.com/mattstiles/car2go/blob/master/car2go.geojson" target="_blank">simple map</a> represents the location of each <a href="https://www.car2go.com/en/washingtondc/" target="_blank">car2go</a> I've rented (excluding those in Austin, Texas). Surprise, they're mostly clustered in our neighborhood:</p>
+<p><em><a href="https://github.com/mattstiles/car2go/blob/master/car2go.geojson" target="_blank"><img class="alignnone size-large wp-image-1451" title="" alt="car2go locations" src="http://thedailyviz.com/wp-content/uploads/2013/06/Screen-Shot-2013-06-24-at-5.02.03-PM-620x336.png" width="620" height="336"></a></em></p>
+<p>This is a simple as it gets. The service also allows other data types, like polygons, for example. Tomorrow I'll try a more interesting data set, maybe DC property parcels or 311 calls locations. And I'll experiment with the Github <a href="https://help.github.com/articles/mapping-geojson-files-on-github" target="_blank">docs</a> to see how I can customize the icons and design. We'll see...</p>
+<p>BTW: Github is using <a href="http://www.mapbox.com" target="_blank">MapBox</a> to create its custom map base layer. Read more about that <a href="http://www.mapbox.com/blog/github-mapbox-maps/" target="_blank">here</a>. And thanks to my co-worker, <a href="http://twitter.com/onyxfish">Chris Groskopf</a>, whose <a href="https://csvkit.readthedocs.org/en/latest/scripts/csvjson.html">csvkit</a> suite makes it super easy to convert basic data files into GeoJSON.</p>
+<p></body></html></p>

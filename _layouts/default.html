@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    
+    <!-- Google Fonts - matching original blog typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900,400italic,700italic,900italic&subset=latin,latin-ext" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,latin-ext" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" type="text/css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ "/media/images/favicon.png" | relative_url }}">
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+</head>
+
+<body>
+    <!-- Modern Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <!-- Logo/Brand -->
+            <div class="navbar-brand">
+                <a href="{{ "/" | relative_url }}" class="brand-link">
+                    <span class="brand-text">THE DAILY VIZ</span>
+                    <!-- <span class="brand-tagline">Data stories by Matt Stiles</span> -->
+                </a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="navbar-menu">
+                <div class="navbar-nav">
+                    <a href="{{ "/" | relative_url }}" class="nav-link {% if page.url == "/" %}active{% endif %}">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="/about/" class="nav-link {% if page.url == "/about/" %}active{% endif %}">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="/topics/" class="nav-link {% if page.url == "/topics/" %}active{% endif %}">
+                        <i class="fas fa-tags"></i>
+                        <span>Topics</span>
+                    </a>
+                    <a href="/contact/" class="nav-link {% if page.url == "/contact/" %}active{% endif %}">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (only for homepage) -->
+    {% if page.url == "/" %}
+    <header class="page-header">
+        <div class="wrapper">
+            <h1 class="page-title">{{ site.title }}</h1>
+            <p class="page-description">{{ site.description }}</p>
+        </div>
+    </header>
+    {% endif %}
+
+    <main class="page-content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-info">
+                        <h3 class="footer-title">The Daily Viz</h3>
+                        <p class="footer-description">
+                            Data visualizations and analysis exploring politics, sports, demographics and trends from Los Angeles and beyond.
+                        </p>
+                        
+                        <div class="footer-navigation">
+                            <div class="footer-links">
+                                <a href="/about/" class="footer-link">About</a>
+                                <a href="/topics/" class="footer-link">Topics</a>
+                                <a href="/contact/" class="footer-link">Contact</a>
+                            </div>
+                            
+                            <div class="footer-social">
+                                <a href="https://github.com/stiles" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-fw fa-github"></i></a>
+                                <a href="https://twitter.com/stiles" class="footer-social-link" aria-label="Twitter"><i class="fa-brands fa-fw fa-twitter"></i></a>
+                                <a href="https://buymeacoffee.com/mattstiles" class="footer-social-link" aria-label="Buy me coffee"><i class="fa-solid fa-fw fa-coffee"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-stats">
+                            <div class="footer-meta">Updated: {{ 'now' | date: "%B %-d, %Y" }}</div>
+                            <div class="footer-meta">Sources: Various public datasets and APIs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© {{ 'now' | date: "%Y" }} <a href="https://mattstiles.me">Matt Stiles</a>. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> because WordPress is trash.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize pym charts
+        document.addEventListener('DOMContentLoaded', function() {
+            var pymParents = document.querySelectorAll('[data-pym-src]');
+            for (var i = 0; i < pymParents.length; i++) {
+                var parent = pymParents[i];
+                var pymId = 'pym-' + i;
+                parent.id = pymId;
+                new pym.Parent(pymId, parent.getAttribute('data-pym-src'), {});
+            }
+            
+            // Mobile navigation toggle
+            var navToggle = document.querySelector('.navbar-toggle');
+            var navMenu = document.querySelector('.navbar-menu');
+            var body = document.body;
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    var isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    
+                    navToggle.setAttribute('aria-expanded', !isExpanded);
+                    navMenu.classList.toggle('is-active');
+                    body.classList.toggle('nav-open');
+                });
+                
+                // Close mobile menu when clicking on a link
+                var navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.classList.remove('is-active');
+                        body.classList.remove('nav-open');
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.classList.remove('is-active');
+                        body.classList.remove('nav-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

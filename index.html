@@ -1,0 +1,123 @@
+---
+layout: default
+---
+
+<div class="home">
+  {% for post in paginator.posts %}
+    <article class="post-list-item">
+      {% if post.featured_image %}
+        <div class="post-list-featured-image">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}" />
+          </a>
+        </div>
+      {% endif %}
+      
+      <div class="post-list-content">
+        <h2 class="post-list-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        
+        <div class="post-list-meta">
+          By {{ site.author.name }} | {{ post.date | date: "%B %d, %Y" }} | 
+          Topics: 
+          {% for category in post.categories %}
+            {{ category }}{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </div>
+        
+        <div class="post-list-excerpt">
+          {{ post.excerpt | strip_html | truncate: 300 }}
+          <a href="{{ post.url | relative_url }}">Read more →</a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+    <nav class="pagination" role="navigation" aria-label="Page navigation">
+      <div class="pagination-container">
+        
+        <!-- Previous page -->
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn pagination-prev" aria-label="Previous page">
+            <i class="fas fa-chevron-left"></i>
+            <span>Previous</span>
+          </a>
+        {% else %}
+          <span class="pagination-btn pagination-prev disabled" aria-label="No previous page">
+            <i class="fas fa-chevron-left"></i>
+            <span>Previous</span>
+          </span>
+        {% endif %}
+
+        <!-- Page numbers -->
+        <div class="pagination-numbers">
+          {% assign start_page = paginator.page | minus: 2 %}
+          {% assign end_page = paginator.page | plus: 2 %}
+          {% if start_page < 1 %}
+            {% assign start_page = 1 %}
+            {% assign end_page = 5 %}
+          {% endif %}
+          {% if end_page > paginator.total_pages %}
+            {% assign end_page = paginator.total_pages %}
+            {% assign start_page = paginator.total_pages | minus: 4 %}
+            {% if start_page < 1 %}
+              {% assign start_page = 1 %}
+            {% endif %}
+          {% endif %}
+
+          <!-- First page if not in range -->
+          {% if start_page > 1 %}
+            <a href="{{ '/' | relative_url }}" class="pagination-number">1</a>
+            {% if start_page > 2 %}
+              <span class="pagination-ellipsis">…</span>
+            {% endif %}
+          {% endif %}
+
+          <!-- Page range -->
+          {% for page in (start_page..end_page) %}
+            {% if page == paginator.page %}
+              <span class="pagination-number current" aria-current="page">{{ page }}</span>
+            {% elsif page == 1 %}
+              <a href="{{ '/' | relative_url }}" class="pagination-number">{{ page }}</a>
+            {% else %}
+              <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-number">{{ page }}</a>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Last page if not in range -->
+          {% if end_page < paginator.total_pages %}
+            {% assign last_minus_one = paginator.total_pages | minus: 1 %}
+            {% if end_page < last_minus_one %}
+              <span class="pagination-ellipsis">…</span>
+            {% endif %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', paginator.total_pages }}" class="pagination-number">{{ paginator.total_pages }}</a>
+          {% endif %}
+        </div>
+
+        <!-- Next page -->
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn pagination-next" aria-label="Next page">
+            <span>Next</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        {% else %}
+          <span class="pagination-btn pagination-next disabled" aria-label="No next page">
+            <span>Next</span>
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        {% endif %}
+
+      </div>
+      
+      <!-- Page info -->
+      <div class="pagination-info">
+        Page {{ paginator.page }} of {{ paginator.total_pages }} 
+        <span class="pagination-separator">•</span>
+        {{ paginator.total_posts }} posts total
+      </div>
+    </nav>
+  {% endif %}
+</div> 

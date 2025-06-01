@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>authory.com export for Charting the Korean War’s Missing Troops</title>
+    <style type='text/css'>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: #2e77ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Charting the Korean War’s Missing Troops</a></h1>
+    <p>
+        <i>Published on <a href='http://thedailyviz.com/2018/07/18/visualizing-the-korean-wars-missing-troops/'></a>, by <a href='https://authory.com/MattStiles'>Matt Stiles</a>, July 18th 2018, 12:26:43 am</i>
+    </p>
+    <figure><img srcset="8ce9f1b0-488e-11eb-8d10-75365b90901d.jpg 1100w, 8d025bb0-488e-11eb-8d10-75365b90901d.jpg 1024w, 8d5843e0-488e-11eb-8d10-75365b90901d.jpg 800w, 8d6f7560-488e-11eb-8d10-75365b90901d.jpg 768w, 8d81c4e0-488e-11eb-8d10-75365b90901d.jpg 396w, 8d96d380-488e-11eb-8d10-75365b90901d.jpg 300w" src="8da8add0-488e-11eb-8d10-75365b90901d.jpg" alt=""></figure>
+<p>I <a href="http://www.latimes.com/world/la-fg-south-korea-soldier-20180622-htmlstory.html">wrote</a> recently about the effort to get North Korea to return some of the remains of United States troops who are still unaccounted for since the Korean War.</p>
+<p>More than 7,000 troops — almost all presumed dead — never came home after the conflict, which ended with an armistice in 1953. There’s <a href="https://www.nknews.org/2018/07/north-korea-to-start-moving-remains-of-u-s-soldiers-in-coming-weeks-official/">new hope</a> that recent diplomacy between the United States and North Korea might allow some of those remains to come home.</p>
+<p>The <a href="http://www.dpaa.mil">Defense POW/MIA Accounting Agency</a>, whose mission is to find these troops from several past conflicts and identify them, posts <a href="http://www.dpaa.mil/Our-Missing/Korean-War/Korean-War-POW-MIA-List/">data</a> on those from the Korean War.</p>
+<p>My friend <a href="https://twitter.com/hrbrmstr">Bob Rudis</a> <a href="https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/">graciously helped</a> me free the data from its original PDF format (though the agency later released a spreadsheet in response to my requests). BTW: Bob did an excellent job <a href="https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/">documenting</a> his process for cleaning the data and creating a chart.</p>
+<p>I had to give some visualizations a try, too.</p>
+<p>More than 30,000 United States troops died in the war, a brutal conflict dramatically changed by the involvement of Chinese forces after an initially strong advance into the North by the Americans early in the fighting.</p>
+<p>Many of those who never came home were pilots, like one I <a href="http://www.latimes.com/world/la-fg-south-korea-soldier-20180622-htmlstory.html">profiled</a> recently, or ground troops engaged in tough fighting at places like the <a href="https://en.wikipedia.org/wiki/Battle_of_Chosin_Reservoir">Chosin Reservoir</a>.</p>
+<p>Here’s the timeline for when these “unaccounted for” troops were lost over the course of the war (the winter 1950 spikes represent the Chinese counterattack and the Chosin Reservoir battle):</p>
+<figure></figure>
+<p>Here are the days of the week in which those losses occurred. This could be random chance, but some 300 troops were reported lost on Dec. 2, 1950, as especially fierce fighting with the Chinese erupted during a battle around Yudam-ni. It was a Thursday:</p>
+<figure></figure>
+<p>Most of those lost were, of course, from the U.S. Army, which endured heavy casualties. The soldiers’ fates were made more perilous by the <a href="https://www.army.mil/article/47963/combating_cold_korea">freezing weather conditions</a>:</p>
+<figure></figure>
+<p>The most populous states, as you’d expect, lost the most troops. Those still missing came from all over the United States, though, and this map shows the rate of loss per 10,000 population (as of 1950). States such Alaska, Nevada and some in the Northeast and Mid Atlantic experienced a disproportionate loss.</p>
+<figure></figure>
+<p>You can get the data <a href="https://github.com/mattstiles/data/tree/master/korean-war-missing">here</a> and, again, check out Bob Rudis’ own <a href="https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/">documentation</a> showing how the data were converted from PDF and visualized using <a href="https://www.r-project.org/">R</a>.</p>
+</body>
+
+</html>

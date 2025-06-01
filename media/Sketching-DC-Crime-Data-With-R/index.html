@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>authory.com export for Sketching D.C. Crime Data With R</title>
+    <style type='text/css'>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: #2e77ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sketching D.C. Crime Data With R</a></h1>
+    <p>
+        <i>Published on <a href='http://thedailyviz.com/2013/07/08/sketching-d-c-crime-data-with-r/'></a>, by <a href='https://authory.com/MattStiles'>Matt Stiles</a>, July 8th 2013, 4:56:16 pm</i>
+    </p>
+    <p>A car burglar last week nabbed a radio from our car, prompting me to think (<a href="http://thedailyviz.com/tag/crime/">once again</a>) about crime in Washington, D.C., where I live.</p>
+<p>I wanted to know if certain crimes were more common in particular neighborhoods, so I downloaded a list of every serious crime in 2012 from the city’s <a href="http://data.dc.gov/">data portal</a>. The data contained about 35,000 reported incidents of homicides, thefts, assaults, etc., with fields listing the date, time and neighborhood associated with each case.</p>
+<p>I used the statistical programming language R, which is great for quickly creating small multiples to examine data, to make some rough visual sketches.</p>
+<p>First, since we’re talking about cars, the first grid shows thefts from vehicles, by hour and “<a href="http://anc.dc.gov/page/about-anc">advisory neighborhood commission</a>“. These commissions are the small groups of officials who represent their respective D.C. neighborhoods on issues like real estate development and alcohol sales, among other things. (I live in Brookland, which is governed by <a href="http://anc.dc.gov/page/advisory-neighborhood-commission-5b">ANC 5B</a>). <em>You can find your ANC <a href="http://dcatlas.dcgis.dc.gov/mar/">here</a></em>.</p>
+<p>It’s clear that thefts from vehicles are most common in <a href="http://www.anc1b.org/">ANC 1B</a>, a diverse, densely populated and rapidly changing section of the city. For those familiar with D.C., this is Shaw, U Street and parts of Columbia Heights. The x-axis shows the hour of the crime, and the y-axis shows the total number of crimes. My neighborhood is relatively safe, actually:</p>
+<figure><a href="https://i2.wp.com/thedailyviz.com/wp-content/uploads/2013/07/theftfromcar2012.png"><img src="26679800-487c-11eb-8d10-75365b90901d.png" alt="theftfromcar2012"></a></figure>
+<p>Next we look at robberies, which appear common in <a href="http://www.anc1a.org/">ANC1A</a>, which also contains Columbia Heights and Park View. Notice the spikes in the early-morning hours in the ANCs 1A and 1B, compared to the late-night spikes in ANCs <a href="http://www.anc8b.org/">8B</a> and <a href="http://anc.dc.gov/page/advisory-neighborhood-commission-8c">8C</a>, both of which are in the far southeast neighborhoods like Anacostia and Buena Vista. These are among the poorest areas in the city. I’m not sure what that means, but it’s interesting:</p>
+<figure><a href="https://i0.wp.com/thedailyviz.com/wp-content/uploads/2013/07/robbery2012.png"><img src="26b4cda0-487c-11eb-8d10-75365b90901d.png" alt="robbery2012"></a></figure>
+<p>Burglaries…</p>
+<figure><a href="https://i1.wp.com/thedailyviz.com/wp-content/uploads/2013/07/burglary2012.png"><img src="274ffc30-487c-11eb-8d10-75365b90901d.png" alt="burglary2012"></a></figure>
+<p>Car thefts…</p>
+<figure><a href="https://i0.wp.com/thedailyviz.com/wp-content/uploads/2013/07/cartheft2012.png"><img src="27a01800-487c-11eb-8d10-75365b90901d.png" alt="cartheft2012"></a></figure>
+<p>Assaults with dangerous weapons…</p>
+<figure><a href="https://i0.wp.com/thedailyviz.com/wp-content/uploads/2013/07/assault2012.png"><img src="27ecff80-487c-11eb-8d10-75365b90901d.png" alt="assault2012"></a></figure>
+<p>Here are the homicides — all of which get coded as occurring at midnight, so we don’t get to distribution by hour. Still, the result is a simple bar chart that shows the variance by region (7D and 8E had more homicides last year than other locations).</p>
+<figure><a href="https://i0.wp.com/thedailyviz.com/wp-content/uploads/2013/07/homicide2012.png"><img src="283d9080-487c-11eb-8d10-75365b90901d.png" alt="homicide2012"></a></figure>
+<p>Here’s the grid with all these crimes above (also including a small number of arson cases):</p>
+<figure><a href="https://i1.wp.com/thedailyviz.com/wp-content/uploads/2013/07/allcrimes.png"><img src="28aca600-487c-11eb-8d10-75365b90901d.png" alt="allcrimes"></a></figure>
+<p>And here’s a grid with histograms for each offense type. Simple thefts (there were more than 12,000 last year) appear to be most commonly reported in the afternoon, while thefts from vehicles are most often reported first thing in the morning — probably because victims notice the crime when they wake up.</p>
+<figure><a href="https://i1.wp.com/thedailyviz.com/wp-content/uploads/2013/07/Screen-Shot-2013-07-08-at-12.32.53-PM.png"><img src="2923d1d0-487c-11eb-8d10-75365b90901d.png" alt="Screen Shot 2013-07-08 at 12.32.53 PM"></a></figure>
+<p>Again, these are just quick sketches, but they show you the power of R in exploring your data before investing time in a more complicated visualization. A look at the <a href="https://gist.github.com/mattstiles/5950269">basic code</a> also shows how quickly these types of sketches can happen.</p>
+<p><b>Previously: </b></p>
+</body>
+
+</html>

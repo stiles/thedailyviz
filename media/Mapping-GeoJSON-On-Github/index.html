@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>authory.com export for Mapping GeoJSON On Github</title>
+    <style type='text/css'>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: #2e77ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mapping GeoJSON On Github</a></h1>
+    <p>
+        <i>Published on <a href='http://thedailyviz.com/2013/06/24/mapping-geojson-on-github/'></a>, by <a href='https://authory.com/MattStiles'>Matt Stiles</a>, June 25th 2013, 12:07:29 am</i>
+    </p>
+    <p>I’ve been hoping to tinker with Github’s new mapping service since the company <a href="https://github.com/blog/1528-there-s-a-map-for-that">announced</a> it earlier this month. Turns out it’s quite easy. You just commit a <a href="http://www.geojson.org/">GeoJSON</a> file to your repo, and <em>voilà</em>.</p>
+<p>The points on this <a href="https://github.com/mattstiles/car2go/blob/master/car2go.geojson">simple map</a> represents the location of each <a href="https://www.car2go.com/en/washingtondc/">car2go</a> I’ve rented (excluding those in Austin, Texas). Surprise, they’re mostly clustered in our neighborhood:</p>
+<p><em></em></p><figure><em><a href="https://github.com/mattstiles/car2go/blob/master/car2go.geojson"><img src="319205d0-487c-11eb-8d10-75365b90901d.png" alt="car2go locations"></a></em></figure><p></p>
+<p>This is a simple as it gets. The service also allows other data types, like polygons, for example. Tomorrow I’ll try a more interesting data set, maybe DC property parcels or 311 calls locations. And I’ll experiment with the Github <a href="https://help.github.com/articles/mapping-geojson-files-on-github">docs</a> to see how I can customize the icons and design. We’ll see…</p>
+<p>BTW: Github is using <a href="http://www.mapbox.com">MapBox</a> to create its custom map base layer. Read more about that <a href="http://www.mapbox.com/blog/github-mapbox-maps/">here</a>. And thanks to my co-worker, <a href="http://twitter.com/onyxfish">Chris Groskopf</a>, whose <a href="https://csvkit.readthedocs.org/en/latest/scripts/csvjson.html">csvkit</a> suite makes it super easy to convert basic data files into GeoJSON.</p>
+</body>
+
+</html>

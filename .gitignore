@@ -1,0 +1,40 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Large files that shouldn't be in Git
+data/thedailyviz.sql
+graphics/north-korean-defector-route-20171127/JSA_Defector.wmv
+
+# Database files
+*.sql
+*.db
+*.sqlite
+
+# Large media files
+*.wmv
+*.avi
+*.mov
+*.mp4
+*.mkv
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log 

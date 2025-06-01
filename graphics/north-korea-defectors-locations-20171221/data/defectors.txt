@@ -1,0 +1,1 @@
+id	location	population	7	Kangwon	58015	Nampho	13913	Ryanggang	44731	Jagang	20710	South Pyongan	10219	North Pyongan	81111	Pyongyang	6953	South Hamgyong	26772	North Hamgyong	186655	South Hwanghae	4444	North Hwanghae	4286	Kaesong	7212	Rason	0
