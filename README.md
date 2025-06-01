@@ -1,6 +1,6 @@
 # The Daily Viz
 
-A (semi-retired) digital sketchpad for data stories, by Matt Stiles.
+A (retired) digital sketchpad for data stories, by Matt Stiles.
 
 ## Migration
 
