@@ -9,9 +9,6 @@ layout: default
         <div class="post-list-featured-image">
           <a href="{{ post.url | relative_url }}" class="featured-image-link">
             <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" />
-            <div class="featured-image-overlay">
-              <span class="read-article-text">Read Article</span>
-            </div>
           </a>
         </div>
       {% endif %}

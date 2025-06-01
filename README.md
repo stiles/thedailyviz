@@ -6,7 +6,7 @@ A (retired) digital sketchpad for data stories, by Matt Stiles.
 
 This blog was successfully migrated from WordPress to Jekyll in May 2025. The migration included:
 
-- **458 blog posts** from 2010-2021 
+- **458 blog posts** from 2010-2019
 - **600 images** consolidated from WordPress uploads 
 - **D3 visualizations** using the NPR dailygraphics rig with pym.js 
 - **Original design** recreated using the same fonts (Source Sans Pro, PT Serif, Source Code Pro) 
