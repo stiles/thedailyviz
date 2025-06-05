@@ -74,7 +74,7 @@ layout: default
           <span class="post-topics">
             Topics: 
             {% for category in post.categories %}
-              <a href="/category/{{ category | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="post-topic">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              <a href="/category/{{ category | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="post-topic">{{ category }}</a>
             {% endfor %}
           </span>
           {% endif %}

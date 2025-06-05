@@ -19,8 +19,9 @@ layout: default
                 <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
                 {% if page.categories and page.categories.size > 0 %}
                 <div class="post-topics">
+                    Topics: 
                     {% for category in page.categories %}
-                        <a href="/category/{{ category | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="post-topic">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                        <a href="/category/{{ category | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="post-topic">{{ category }}</a>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -37,7 +38,7 @@ layout: default
         <div class="post-tags">
             <span class="tags-label">Tags:</span>
             {% for tag in page.tags %}
-                <a href="/tag/{{ tag | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                <a href="/tag/{{ tag | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="tag">{{ tag }}</a>
             {% endfor %}
         </div>
     </footer>

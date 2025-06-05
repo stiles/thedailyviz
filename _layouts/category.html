@@ -31,7 +31,7 @@ layout: default
             {% if post.categories.size > 0 %}
               • Categories: 
               {% for category in post.categories %}
-                <a href="/category/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                <a href="/category/{{ category | slugify }}/" class="post-topic">{{ category }}</a>
               {% endfor %}
             {% endif %}
           </div>
