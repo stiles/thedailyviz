@@ -3,6 +3,53 @@ layout: default
 ---
 
 <div class="home">
+  <!-- Featured Post Section -->
+  {% if paginator.page == 1 %}
+    <section class="featured-post">
+      <div class="featured-post-badge">
+        <i class="fas fa-star"></i>
+        <span>Most Popular</span>
+      </div>
+      
+      <article class="featured-post-item">
+        <div class="featured-post-image">
+          <a href="/2016/09/17/how-common-is-your-birthday-dailyviz/" class="featured-image-link">
+            <img src="/media/How-Common-Is-Your-Birthday-Pt-2/birthday_promo_image.png" alt="How Common is Your Birthday? This Visualization Might Surprise You" loading="lazy" />
+          </a>
+        </div>
+        
+        <div class="featured-post-content">
+          <h2 class="featured-post-title">
+            <a href="/2016/09/17/how-common-is-your-birthday-dailyviz/">How Common is Your Birthday? This Visualization Might Surprise You</a>
+          </h2>
+          
+          <div class="featured-post-meta">
+            <span class="post-author">By {{ site.author.name }}</span>
+            <span class="post-separator">•</span>
+            <time class="post-date" datetime="2016-09-17T16:50:32-07:00">September 17, 2016</time>
+            <span class="post-separator">•</span>
+            <span class="post-topics">
+              Topics: <a href="/category/demographics/" class="post-topic">Demographics</a>
+            </span>
+          </div>
+          
+          <div class="featured-post-excerpt">
+            It's baby season in America, with September the busiest month for births on average in the last two decades. This interactive heatmap shows how common your birthday really is, using actual birth counts by date from 1994 to 2014. The most popular post on The Daily Viz, viewed more than a million times.
+            <a href="/2016/09/17/how-common-is-your-birthday-dailyviz/" class="read-more-link">Explore the visualization →</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Divider -->
+    <div class="featured-divider">
+      <hr class="divider-line">
+      <span class="divider-text">Latest posts</span>
+      <hr class="divider-line">
+    </div>
+  {% endif %}
+
+  <!-- Regular Posts -->
   {% for post in paginator.posts %}
     <article class="post-list-item">
       {% if post.featured_image %}
