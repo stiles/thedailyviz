@@ -46,12 +46,7 @@ Images are organized as follows:
 
 ## Deployment options
 
-This static site can be deployed to:
-
-- **GitHub Pages** (free)
-- **Netlify** (free tier)
-- **Vercel** (free tier)  
-- Any static hosting provider
+This static site can be deployed to any static hosting provider. I use Github Pages. 
 
 ## D3 visualizations
 
