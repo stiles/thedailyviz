@@ -7,7 +7,8 @@ module Jekyll
       if site.layouts.key? 'category'
         dir = site.config['category_dir'] || 'category'
         site.categories.each_key do |category|
-          site.pages << CategoryPage.new(site, site.source, File.join(dir, category.downcase.gsub(/\s+/, '-').gsub(/[^\w\-]/, '')), category)
+          category_slug = category.downcase.gsub(/\s+/, '-').gsub(/[^\w\-]/, '')
+          site.pages << CategoryPage.new(site, site.source, File.join(dir, category_slug), category)
         end
       end
       
@@ -15,7 +16,8 @@ module Jekyll
       if site.layouts.key? 'tag'
         dir = site.config['tag_dir'] || 'tag'
         site.tags.each_key do |tag|
-          site.pages << TagPage.new(site, site.source, File.join(dir, tag.downcase.gsub(/\s+/, '-').gsub(/[^\w\-]/, '')), tag)
+          tag_slug = tag.downcase.gsub(/\s+/, '-').gsub(/[^\w\-]/, '')
+          site.pages << TagPage.new(site, site.source, File.join(dir, tag_slug), tag)
         end
       end
     end
