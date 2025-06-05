@@ -48,7 +48,7 @@ Explore posts by category and topic. Browse by subject area to find data stories
 <div class="categories-list">
   {% for category in categories %}
     <div class="category-item">
-      <h4><a href="/category/{{ category[0] | slugify }}/">{{ category[0] | replace: '&amp;', '&' }}</a></h4>
+      <h4><a href="/category/{{ category[0] | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/">{{ category[0] | replace: '&amp;', '&' }}</a></h4>
       <span class="post-count">{{ category[1] | size }} posts</span>
     </div>
   {% endfor %}
@@ -59,7 +59,7 @@ Explore posts by category and topic. Browse by subject area to find data stories
 {% assign tags = site.tags | sort %}
 <div class="tags-cloud">
   {% for tag in tags %}
-    <a href="/tag/{{ tag[0] | slugify }}/" class="tag-link" style="font-size: {{ tag[1] | size | times: 0.1 | plus: 1 }}em;">
+    <a href="/tag/{{ tag[0] | downcase | replace: ' ', '-' | replace: '&amp;', 'amp' | replace: '&', 'amp' }}/" class="tag-link" style="font-size: {{ tag[1] | size | times: 0.1 | plus: 1 }}em;">
       {{ tag[0] }}
     </a>
   {% endfor %}
