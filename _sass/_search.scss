@@ -1,0 +1,59 @@
+.search-container {
+  margin-left: auto; // Pushes search to the right in flex container
+  padding: 0.5rem;
+  position: relative; // For positioning results absolutely
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  min-width: 200px;
+}
+
+.results-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%; // Or match search-input width
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000; // Ensure it's above other content
+}
+
+.results-container li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.results-container li:last-child {
+  border-bottom: none;
+}
+
+.results-container li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.results-container li a:hover {
+  color: #007bff;
+}
+
+.results-container .search-date {
+  font-size: 0.8rem;
+  color: #777;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.search-container .no-results {
+    padding: 0.75rem;
+    color: #777;
+} 
