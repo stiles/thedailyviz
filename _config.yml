@@ -47,4 +47,8 @@ author:
 # Google Analytics
 google_analytics:
   tracking_id: "G-EFP5W9BBBD"
-  stream_id: "5250781266" 
+  stream_id: "5250781266"
+
+# Google AdSense
+google_adsense:
+  client_id: "ca-pub-8839053265498229" 
